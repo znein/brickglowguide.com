@@ -1,15 +1,14 @@
 // The only file you need to edit to start earning on this site.
 //
-// link: paste the affiliate link BRKOX gives you (from their affiliate dashboard).
-//   Its query string (e.g. ?ref=abc123 or ?sca_ref=1234.xyz) is copied onto every
-//   product and collection link on the page, so each one deep-links with your credit.
+// BRKOX's affiliate program runs on Awin (advertiser 129093). Every buy link goes through
+// Awin's tracker, which credits publisher 2085789 and forwards to the exact product page.
 //
-// deepLinkTemplate: only for programs that route clicks through their own tracking
-//   domain (ShareASale, Impact, Refersion short links...). Use {url} where the
-//   destination page goes, e.g. "https://track.example.com/c/123?u={url}".
-//   When set, it is used instead of `link`.
+// link: for programs that credit a query parameter on the store itself (?ref=abc).
+//   Unused here because deepLinkTemplate is set.
+// deepLinkTemplate: networks with their own tracking domain. {url} = the URL-encoded
+//   destination page. When set, it is used instead of `link`.
 window.AFFILIATE = {
   store: "https://brkox.com",
-  link: "https://brkox.com/?ref=YOUR_CODE",
-  deepLinkTemplate: ""
+  link: "",
+  deepLinkTemplate: "https://www.awin1.com/cread.php?awinmid=129093&awinaffid=2085789&ued={url}"
 };
